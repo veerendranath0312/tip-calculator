@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/d692c6ffbe.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="header">
+      <h3>SPLI</h3>
+      <h3>TTER</h3>
+    </div>
+    <div class="container">
+      <div class="left">
+        <!-- Bill Amount -->
+        <div class="form-group">
+          <label for="bill">Bill</label>
+          <div class="input">
+            <span>$</span>
+            <input
+              type="text"
+              name="bill"
+              id="bill"
+              placeholder="0"
+              class="text-field"
+            />
+          </div>
+        </div>
+
+        <!-- Tip % -->
+        <div class="form-group">
+          <label for="tip-percent">Select Tip %</label>
+          <div class="tip-grid">
+            <button class="tip-btn" id="five-percent">5%</button>
+            <button class="tip-btn" id="ten-percent">10%</button>
+            <button class="tip-btn" id="fifteen-percent">15%</button>
+            <button class="tip-btn" id="twentyfive-percent">25%</button>
+            <button class="tip-btn" id="fifty-percent">50%</button>
+            <input type="text" name="custom" id="custom" placeholder="Custom" />
+          </div>
+        </div>
+
+        <!-- Numbero of people -->
+        <div class="form-group">
+          <label for="people">Number of People</label>
+          <div class="input">
+            <span><i class="fas fa-user fa-xs"></i></span>
+            <input
+              type="text"
+              name="people"
+              id="people"
+              class="text-field"
+              placeholder="0"
+            />
+            <p id="error-msg">Can't be zero</p>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="display">
+          <div class="display-group">
+            <div class="wrapper">
+              <div class="labels">
+                <p>Tip Amount</p>
+                <span>/ person</span>
+              </div>
+              <div class="amount">
+                <h1 id="tip-amount">$0.00</h1>
+              </div>
+            </div>
+            <div class="wrapper">
+              <div class="labels">
+                <p>Total</p>
+                <span>/ person</span>
+              </div>
+              <div class="amount">
+                <h1 id="total-amount">$0.00</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reset">
+          <button id="reset" disabled>Reset</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

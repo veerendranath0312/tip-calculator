@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --darkest-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --lightest-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
+}
+
+body {
+  /* font-family: 'Space Mono', monospace; */
+  background: var(--light-grayish-cyan);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+}
+
+.header {
+  margin: 190px 0 110px;
+}
+
+.header h3 {
+  color: var(--very-dark-cyan);
+  letter-spacing: 6px;
+}
+
+.container {
+  width: 690px;
+  padding: 18px;
+  border-radius: 15px;
+  background: var(--White);
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .left {
+  padding: 10px 30px 10px 10px;
+}
+
+.container .left,
+.container .right {
+  border-radius: 10px;
+  flex-grow: 1;
+}
+
+.container .right {
+  background: var(--very-dark-cyan);
+}
+
+/* left container styling */
+.left label,
+#error-msg {
+  font-size: 11px;
+  margin-bottom: 3px;
+  color: hsl(184, 14%, 56%);
+  font-weight: bold;
+}
+
+span {
+  font-size: 20px;
+}
+
+.left .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.left .form-group:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.input {
+  display: flex;
+  background: var(--lightest-grayish-cyan);
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: var(--dark-grayish-cyan);
+  border: 2px solid var(--lightest-grayish-cyan);
+  position: relative;
+}
+
+.text-field {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: right;
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+::placeholder {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: var(--dark-grayish-cyan);
+}
+
+.tip-grid {
+  width: 100%;
+  margin-top: 6px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 35px 35px;
+  grid-gap: 8px;
+}
+
+.tip-grid .tip-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background: var(--very-dark-cyan);
+  color: var(--White);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.tip-grid .tip-btn:hover,
+.tip-grid .tip-btn:focus {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  transition: all 0.3s;
+}
+
+.tip-grid #custom {
+  background: var(--lightest-grayish-cyan);
+  border: 2px solid var(--lightest-grayish-cyan);
+  border-radius: 4px;
+  padding: 0 10px;
+  cursor: pointer;
+  text-align: right;
+  outline: none;
+  color: var(--very-dark-cyan);
+  font-weight: bold;
+}
+
+#custom::placeholder {
+  font-size: 16px;
+  text-align: center;
+}
+
+.input:hover,
+.tip-grid #custom:focus,
+.tip-grid #custom:hover {
+  border-color: var(--strong-cyan);
+}
+
+#error-msg {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  color: rgb(252, 125, 125);
+  visibility: hidden;
+}
+
+/* right container styling */
+.right {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.labels p {
+  color: var(--White);
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.labels span {
+  font-size: 10px;
+  color: var(--dark-grayish-cyan);
+  font-weight: bold;
+}
+.amount h1 {
+  color: var(--strong-cyan);
+  font-size: 2.2rem;
+}
+
+#reset {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding: 8px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: hsl(183, 64%, 25%);
+  color: var(--very-dark-cyan);
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  body {
+    height: 100%;
+  }
+
+  .header {
+    margin: 60px 0 50px;
+  }
+
+  .container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .container .left {
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  .tip-grid {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 35px 35px 35px;
+    grid-gap: 10px;
+  }
+
+  #reset {
+    margin-top: 30px;
+  }
+} ;
